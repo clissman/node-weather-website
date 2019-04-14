@@ -1,5 +1,3 @@
-
-
 const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
 const messageOne = document.getElementById('message-1')
@@ -12,7 +10,7 @@ weatherForm.addEventListener('submit', (e) => {
     messageOne.textContent = "Loading..."
     messageTwo.textContent = ""  //This is to reset the forecast while loading is appearing between two searches.
     
-    fetch(`http://localhost:3000/weather?address=${location}`)
+    fetch(`/weather?address=${location}`)
         .then(res => res.json())
         .then(data => {
             if (data.error) {
